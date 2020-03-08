@@ -1,3 +1,12 @@
-<span class="users">Users</span>
-<span class="todos">Todos</span>
+<nav>
+    <ul>
+        <li>
+            <a [routerLink]="[ '/users' ]">Users</a>
+        </li>
+        <li>
+            <a [routerLink]="[ '/todos' ]">Todos</a>
+        </li>
+    </ul>
+</nav>
+
 <router-outlet></router-outlet>
