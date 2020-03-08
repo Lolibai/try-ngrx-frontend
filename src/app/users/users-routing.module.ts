@@ -6,8 +6,9 @@ import { UsersComponent } from './users.component';
 const routes: Routes = [
   {
     path: '',
+    pathMatch: 'full',
     component: UsersComponent,
-    children: [{ path: '', pathMatch: 'full', component: UserListComponent }]
+    children: [{ path: '', component: UserListComponent }]
   }
 ];
 
