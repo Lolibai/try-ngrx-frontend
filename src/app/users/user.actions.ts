@@ -9,6 +9,11 @@ export const loadUsers = createAction(
   props<{ users: User[] }>()
 );
 
+export const addUserRequest = createAction(
+  '[User/API] Add User Request',
+  props<{ user: User }>()
+);
+
 export const addUser = createAction(
   '[User/API] Add User',
   props<{ user: User }>()
@@ -37,6 +42,11 @@ export const updateUser = createAction(
 export const updateUsers = createAction(
   '[User/API] Update Users',
   props<{ users: Update<User>[] }>()
+);
+
+export const deleteUserRequest = createAction(
+  '[User/API] Delete User Request',
+  props<{ id: string }>()
 );
 
 export const deleteUser = createAction(

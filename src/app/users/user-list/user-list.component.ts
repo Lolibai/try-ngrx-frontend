@@ -11,13 +11,15 @@ import * as fromStore from '../user.reducer';
   styleUrls: ['./user-list.component.css']
 })
 export class UserListComponent implements OnInit {
-  users$: Observable<User[]>;
+  users$: Observable<User[]> = this.store.select(fromStore.getAllUsers);
 
-  constructor(private store: Store<fromStore.State>) {
-    this.users$ = store.select(fromStore.selectAll);
-  }
+  constructor(private store: Store<fromStore.State>) {}
 
   ngOnInit() {
     this.store.dispatch(fromUserActions.getUsers());
+  }
+
+  removeUser(id) {
+    this.store.dispatch(fromUserActions.deleteUserRequest({ id }));
   }
 }

@@ -1,1 +1,9 @@
+<form
+    [formGroup]="user"
+    (submit)="addNewUser($event)">
+    <input
+        formControlName="name"
+        placeholder="new user...">
+    <button type="submit">Add</button>
+</form>
 <router-outlet></router-outlet>
